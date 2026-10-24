@@ -60,7 +60,7 @@ The Bernoulli program supports `n = 1…6`; the multiplication program supports 
 - **The mill calculates.** Addition, subtraction, multiplication, and division move the program forward.
 - **Cycles repeat instructions.** The journal records every executed operation, including repeated cards.
 
-The interface includes a guided tour, explanations of the machine’s parts, downloadable calculation journals, and **Parchment** and **Midnight blue** themes. The selected theme is saved locally when browser storage is available.
+The interface includes a guided tour, explanations of the machine’s parts, downloadable calculation journals, and **Midnight blue** (default) and **Parchment** themes. The selected theme is saved locally when browser storage is available.
 
 ### Two arithmetic models
 

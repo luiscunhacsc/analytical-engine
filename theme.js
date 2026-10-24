@@ -1,7 +1,7 @@
 // Apply the saved appearance before the styles load to avoid a light flash.
 (() => {
   const key = 'analytical-engine-theme';
-  const normalize = value => value === 'midnight' ? 'midnight' : 'parchment';
+  const normalize = value => value === 'parchment' ? 'parchment' : 'midnight';
   const apply = value => {
     const theme = normalize(value);
     document.documentElement.dataset.theme = theme;
@@ -11,7 +11,7 @@
     if (select) select.value = theme;
     return theme;
   };
-  let saved = 'parchment';
+  let saved = 'midnight';
   try { saved = localStorage.getItem(key); } catch { /* Storage may be unavailable. */ }
   apply(saved);
   document.addEventListener('DOMContentLoaded', () => {
