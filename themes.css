@@ -1,0 +1,98 @@
+/* Appearance controls and a navy palette, retaining the instrument's brass. */
+:root { color-scheme: light; }
+.theme-picker { display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
+.theme-picker > span { font: 7px var(--mono); letter-spacing: 1.2px; color: var(--muted); }
+.theme-picker select { min-width: 137px; padding: 8px 10px; background: var(--white); font-size: 11px; }
+.control-bar { flex-wrap: wrap; row-gap: 12px; }
+.main-controls { flex-wrap: wrap; }
+.speed-control { margin-left: auto; }
+
+:root[data-theme="midnight"] {
+  color-scheme: dark;
+  --paper: #070f21;
+  --white: #0e1b30;
+  --ink: #e8edf5;
+  --muted: #acb9cc;
+  --line: #293c56;
+  --gold: #d4b37a;
+  --gold-light: #25384f;
+  --green: #294c70;
+}
+[data-theme="midnight"] .primary { background: #294c70; color: #faf5eb; }
+[data-theme="midnight"] .primary:hover { background: #365f89; }
+[data-theme="midnight"] .outline { border-color: #3b506b; }
+[data-theme="midnight"] .outline:hover { background: #1b2d45; }
+[data-theme="midnight"] .engine-layout,
+[data-theme="midnight"] .instrument { border-color: var(--line); }
+[data-theme="midnight"] .engine-layout { box-shadow: 0 8px 30px #0003; }
+[data-theme="midnight"] .instrument { background: #0b172a; }
+[data-theme="midnight"] .instrument-header,
+[data-theme="midnight"] .control-bar { background: #101e33; }
+[data-theme="midnight"] .instrument-header,
+[data-theme="midnight"] .operation-strip { border-color: var(--line); }
+[data-theme="midnight"] .operation-strip { background: #122239; }
+[data-theme="midnight"] .machine-container { background-image: radial-gradient(#8ca6c733 .65px, transparent .65px); }
+[data-theme="midnight"] .plate-label { color: #a6b5c9; }
+[data-theme="midnight"] .live-dot { background: #9cbb9e; box-shadow: 0 0 0 3px #9cbb9e15; }
+[data-theme="midnight"] .status-pill:before { border-color: #9cbb9e; }
+[data-theme="midnight"] .part-title { fill: #e2eaf4; }
+[data-theme="midnight"] .part-sub { fill: #acbed4; }
+[data-theme="midnight"] .machine svg text[font-family="monospace"][font-size="6"],
+[data-theme="midnight"] .machine svg text[font-family="monospace"][font-size="7"] { fill: #b9c9dc; }
+[data-theme="midnight"] #mill-symbol { fill: var(--gold); }
+[data-theme="midnight"] .machine .hotspot:hover .part-title { fill: #f0cb89; }
+[data-theme="midnight"] .machine.running .shaft-accent { stroke: #dfbb79; }
+[data-theme="midnight"] .notebook,
+[data-theme="midnight"] .inspection { background: #101c30; }
+[data-theme="midnight"] .formula span { color: #aabbd0; }
+[data-theme="midnight"] .printed-result { background: #17263b; border-color: #34445b; }
+[data-theme="midnight"] .printed-result:after {
+  background: linear-gradient(135deg, #17263b 25%, transparent 25%) -5px 0,
+              linear-gradient(225deg, #17263b 25%, transparent 25%) -5px 0;
+  background-size: 8px 8px;
+}
+[data-theme="midnight"] .awaiting { color: #aebbd0; }
+[data-theme="midnight"] .hint-number { border-color: #665c48; }
+[data-theme="midnight"] .tabs button span { background: #25354a; }
+[data-theme="midnight"] .card-track { scrollbar-color: #52627b transparent; }
+[data-theme="midnight"] .punch-card { border-color: #3b4c63; background: #17263b; }
+[data-theme="midnight"] .punch-card.current { background: #2a3541; border-color: var(--gold); box-shadow: 0 1px 7px #0002; }
+[data-theme="midnight"] .punch-card.current:before { color: #101b2c; }
+[data-theme="midnight"] .punch-card.completed { opacity: .75; }
+[data-theme="midnight"] .punch-card:hover { border-color: var(--gold); }
+[data-theme="midnight"] .card-head { color: #c6b99e; }
+[data-theme="midnight"] .card-symbol { color: #e4d6b9; }
+[data-theme="midnight"] .card-vars { color: #c8d4e2; }
+[data-theme="midnight"] .holes { border-color: #485262; }
+[data-theme="midnight"] .hole { background: #38475b; }
+[data-theme="midnight"] .hole.punched { background: #d4bc8d; }
+[data-theme="midnight"] .program-card:hover { background: #13233b; border-color: #9c8766; }
+[data-theme="midnight"] .program-card.selected { background: #14233a; border-color: #697281; }
+[data-theme="midnight"] .program-symbol,
+[data-theme="midnight"] .archive-mark { color: #cfb57d; }
+[data-theme="midnight"] .register { background: #15243a; }
+[data-theme="midnight"] .register.changed { background: #28384b; }
+[data-theme="midnight"] dialog { border-color: #57677f; box-shadow: 0 30px 100px #0008; }
+[data-theme="midnight"] dialog::backdrop { background: #020714b3; }
+[data-theme="midnight"] .tour { border-color: #9d855e; box-shadow: 0 15px 60px #0007; }
+[data-theme="midnight"] .toast { background: #294c70; color: #faf5eb; }
+[data-theme="midnight"] .form-error,
+[data-theme="midnight"] .error-text { color: #f2ac9b !important; }
+
+@media (max-width: 1100px) {
+  .site-header { gap: 18px; }
+  .site-header nav { gap: 18px; }
+}
+@media (max-width: 800px) {
+  .site-header { flex-wrap: wrap; padding-top: 22px; padding-bottom: 15px; row-gap: 18px; }
+  .brand { order: 0; }
+  .theme-picker { order: 1; margin-left: auto; }
+  .site-header nav { order: 2; width: 100%; justify-content: space-between; }
+  .site-header nav a:last-child { display: block; }
+}
+@media (max-width: 560px) {
+  .theme-picker select { min-width: 116px; padding: 7px 6px; font-size: 10px; }
+  .theme-picker > span { font-size: 6px; }
+  .main-controls { width: 100%; justify-content: space-between; }
+  .speed-control { font-size: 8px; gap: 9px; }
+}
